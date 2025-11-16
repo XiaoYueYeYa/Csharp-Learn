@@ -1,4 +1,6 @@
 {
   "cssTheme": "Border",
-  "monospaceFontFamily": "JetBrains Mono"
+  "monospaceFontFamily": "JetBrains Mono",
+  "baseFontSizeAction": true,
+  "baseFontSize": 16
 }
