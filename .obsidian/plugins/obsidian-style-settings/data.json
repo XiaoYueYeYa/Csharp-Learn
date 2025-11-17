@@ -8,10 +8,7 @@
   "anuppuccin-theme-settings@@anp-alt-rainbow-style": "anp-simple-rainbow-color-toggle",
   "anuppuccin-theme-settings@@anp-simple-rainbow-title-toggle": true,
   "anuppuccin-theme-settings@@anp-simple-rainbow-icon-folder-toggle": true,
-  "anuppuccin-theme-settings@@anp-simple-rainbow-indentation-toggle": true,
   "anuppuccin-theme-settings@@anp-simple-rainbow-collapse-toggle": true,
-  "anuppuccin-theme-settings@@anp-simple-rainbow-icon-toggle": false,
-  "anuppuccin-theme-settings@@anp-rainbow-subfolder-color-toggle": true,
   "anuppuccin-theme-settings@@anp-active-line": "anp-no-highlight",
   "anuppuccin-theme-settings@@anp-codeblock-numbers": true,
   "anuppuccin-theme-settings@@anp-color-transition-toggle": false,
@@ -26,5 +23,13 @@
   "anuppuccin-theme-settings@@anp-cursor": "pointer",
   "anuppuccin-theme-settings@@anp-rainbow-file-toggle": false,
   "anuppuccin-theme-settings@@anp-full-rainbow-text-color-toggle-light": false,
-  "anuppuccin-theme-settings@@anuppuccin-accent-toggle": true
+  "anuppuccin-theme-settings@@anuppuccin-accent-toggle": true,
+  "anp-custom-rainbow-colors@@rainbow-color-1-default": "rainbow-color-1-yellow",
+  "anp-custom-rainbow-colors@@rainbow-color-2-default": "rainbow-color-2-green",
+  "anuppuccin-theme-settings@@anp-simple-rainbow-indentation-toggle": true,
+  "anuppuccin-theme-settings@@anp-simple-rainbow-icon-toggle": true,
+  "anuppuccin-theme-settings@@anp-rainbow-subfolder-color-toggle": true,
+  "anp-custom-rainbow-colors@@rainbow-color-repeat": "rainbow-repeat-10",
+  "folder-color-border-icon-style@@folder-color-scheme-class": "folder-scheme-nord-aurora",
+  "folder-color-schemes@@folder-color-scheme-class": "folder-scheme-misty-morning"
 }

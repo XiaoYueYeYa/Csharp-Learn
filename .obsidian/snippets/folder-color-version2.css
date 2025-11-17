@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* @settings
+name: 【杰森的效率工坊】文件夹多彩边框
+id: folder-color-border-icon-style
+settings:
+    - 
+        id: folder-color-scheme-class
+        title: 配色方案
+        description: "为文件夹边框、文字和图标选择一套循环配色方案。"
+        type: class-select
+        allowEmpty: false
+        default: folder-scheme-neon-jewel
+        options:
+            - 
+                label: 霓虹宝石 (Neon Jewel)
+                value: folder-scheme-neon-jewel
+            - 
+                label: 北境极光 (Nord Aurora)
+                value: folder-scheme-nord-aurora
+            - 
+                label: 秋日森语 (Autumn Forest)
+                value: folder-scheme-autumn-forest
+            - 
+                label: 深海远山 (Deep Ocean)
+                value: folder-scheme-deep-ocean
+            - 
+                label: 蔷薇之梦 (Rose Dream)
+                value: folder-scheme-rose-dream
+*/
+
+/* --- 1. 配色方案定义区 --- */
+/* Style Settings 插件会根据你的选择，应用下面的其中一个类来定义颜色 */
+
+/* 方案一：霓虹宝石 (Neon Jewel) - 默认 */
+.folder-scheme-neon-jewel {
+    --folder-color-1: #6ab5d6;
+    /* Sky Blue */
+    --folder-color-2: #d6a760;
+    /* Vibrant Yellow */
+    --folder-color-3: #b569d6;
+    /* Lilac Purple */
+    --folder-color-4: #d66087;
+    /* Coral Pink */
+    --folder-color-5: #55c4a7;
+    /* Mint Green */
+    --folder-color-6: #6086d6;
+    /* Jewel Blue */
+}
+
+/* 方案二：北境极光 (Nord Aurora) */
+.folder-scheme-nord-aurora {
+    --folder-color-1: #d08770;
+    --folder-color-2: #ebcb8b;
+    --folder-color-3: #a3be8c;
+    --folder-color-4: #88c0d0;
+    --folder-color-5: #81a1c1;
+    --folder-color-6: #b48ead;
+}
+
+/* 方案三：秋日森语 (Autumn Forest) */
+.folder-scheme-autumn-forest {
+    --folder-color-1: #b06a4b;
+    /* Terracotta */
+    --folder-color-2: #c89258;
+    /* Mustard */
+    --folder-color-3: #6f7c3f;
+    /* Olive Green */
+    --folder-color-4: #a47c48;
+    /* Oak */
+    --folder-color-5: #8c5a47;
+    /* Russet */
+    --folder-color-6: #5e6145;
+    /* Forest Green */
+}
+
+/* 方案四：深海远山 (Deep Ocean) */
+.folder-scheme-deep-ocean {
+    --folder-color-1: #526D82;
+    --folder-color-2: #738a9a;
+    --folder-color-3: #9DB2BF;
+    --folder-color-4: #b8c4ce;
+    --folder-color-5: #7c909e;
+    --folder-color-6: #5e7686;
+}
+
+/* 方案五：蔷薇之梦 (Rose Dream) */
+.folder-scheme-rose-dream {
+    --folder-color-1: #f6c8d7;
+    --folder-color-2: #e8b3c5;
+    --folder-color-3: #d89eb6;
+    --folder-color-4: #c68ba8;
+    --folder-color-5: #b27a97;
+    --folder-color-6: #d4a7c0;
+}
+
+
+/* --- 2. 核心样式逻辑 (无需修改) --- */
+
+/* 为顶级文件夹标题设置相对定位，作为伪元素的锚点 */
+.nav-files-container>div>.tree-item.nav-folder>.nav-folder-title {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+/* 使用 ::before 伪元素创建背景/边框盒子 */
+.nav-files-container>div>.tree-item.nav-folder>.nav-folder-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px 1px 1px 3px;
+    border-radius: 5px;
+    z-index: -1;
+    /* 将伪元素置于实际内容之后 */
+}
+
+
+/* --- 3. 循环应用颜色到边框、文字和图标 (无需修改) --- */
+
+/* 第1个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 1)>.nav-folder-title::before {
+    border-color: var(--folder-color-1);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 1)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-1);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 1)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-1);
+}
+
+/* 第2个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 2)>.nav-folder-title::before {
+    border-color: var(--folder-color-2);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 2)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-2);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 2)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-2);
+}
+
+/* 第3个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 3)>.nav-folder-title::before {
+    border-color: var(--folder-color-3);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 3)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-3);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 3)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-3);
+}
+
+/* 第4个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 4)>.nav-folder-title::before {
+    border-color: var(--folder-color-4);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 4)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-4);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 4)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-4);
+}
+
+/* 第5个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 5)>.nav-folder-title::before {
+    border-color: var(--folder-color-5);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 5)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-5);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 5)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-5);
+}
+
+/* 第6个文件夹 */
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 6)>.nav-folder-title::before {
+    border-color: var(--folder-color-6);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 6)>.nav-folder-title .nav-folder-title-content {
+    color: var(--folder-color-6);
+}
+
+.nav-files-container>div>.tree-item.nav-folder:nth-child(6n + 6)>.nav-folder-title .iconize-icon svg {
+    stroke: var(--folder-color-6);
+}
