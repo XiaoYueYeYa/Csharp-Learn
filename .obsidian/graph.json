@@ -8,28 +8,28 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:C#入门  ",
+      "query": "path:Csharp入门  ",
       "color": {
         "a": 1,
         "rgb": 8454016
       }
     },
     {
-      "query": "path:C#基础  ",
+      "query": "path:Csharp基础  ",
       "color": {
         "a": 1,
         "rgb": 7077862
       }
     },
     {
-      "query": "path:C#核心  ",
+      "query": "path:Csharp核心  ",
       "color": {
         "a": 1,
         "rgb": 16706678
       }
     },
     {
-      "query": "path:C#进阶  ",
+      "query": "path:Csharp进阶  ",
       "color": {
         "a": 1,
         "rgb": 14701138
@@ -46,6 +46,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5863949095055176,
+  "scale": 2.329492784132534,
   "close": true
 }
