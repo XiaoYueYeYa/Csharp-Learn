@@ -42,4 +42,39 @@ Console.WriteLine(array[0]);
 
 #### 删
 
+```C#
+//移除指定元素 从头开始找 找到就删除
+array.Remove(1);
+//移除指定位置的元素
+array.RemoveAt(0);
+//清空
+//array.Clear();
+```
+
+
+#### 查
+
+```C#
+//得到指定位置的元素
+Console.WriteLine(array[0]);
+
+//查找元素是否存在
+if (array.Contains(1))
+{
+    Console.WriteLine("存在1");
+}
+
+//正向查找元素位置
+//找到的返回值 是位置 找不到返回 -1
+int index = array.IndexOf(1);
+Console.WriteLine(index);
+Console.WriteLine(array.IndexOf(false));
+
+//反向查找元素位置
+//返回从头开始的索引值
+index = array.LastIndexOf(true);
+Console.WriteLine(index);
+```
+
+
 
