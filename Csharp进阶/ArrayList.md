@@ -2,10 +2,10 @@
 [索引器](../Csharp核心/面向对象_封装/索引器.md)
 
 ## ArrayList的本质
-ArrayList是一个C#为我们封装好的类
+ArrayList是一个C#为我们==**封装好的类**==
 它的本质是一个`object`类型的数组
 `ArrayList`类帮助我们实现了很多方法
-比如数组的增删改查
+比如数组的**增删改查**
 
 ### 声明
 需要引用命名空间`using System.Collections;`
@@ -27,7 +27,19 @@ array.Add(1);
 
 范围增加(批量增加 把另一个list容器里面的内容加到后面
 ```C#
-```ArrayList array2 = new ArrayList();
+ArrayList array2 = new ArrayList();
 array2.Add(123);
 array.AddRange(array2);
 ```
+
+插入
+```C#
+//参数一:位置
+//参数二:内容 
+array.Insert(0,"12345");
+Console.WriteLine(array[0]);
+```
+
+#### 删
+
+
