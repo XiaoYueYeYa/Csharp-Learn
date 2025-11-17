@@ -2,7 +2,7 @@
   "cssTheme": "AnuPpuccin",
   "monospaceFontFamily": "JetBrains Mono",
   "baseFontSizeAction": true,
-  "baseFontSize": 16,
+  "baseFontSize": 15,
   "accentColor": "#5cb2f5",
   "enabledCssSnippets": [
     "styles",

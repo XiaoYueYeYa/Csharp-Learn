@@ -114,3 +114,171 @@ int a = 1;
 array[0] = a;//装箱
 a = (int)array[0];//拆箱
 ```
+
+
+
+## 练习题
+
+创建一个背包管理类 使用ArrayList存储物品
+实现购买物品 卖出物品 显示物品的功能
+购买与卖出物品会导致金钱变化
+
+```C#
+class BagMgr
+{
+    public int money;
+    //背包的物品
+    public ArrayList item;
+
+    public BagMgr(int money)
+    {
+        this.money = money;
+        item = new ArrayList();
+    }
+
+    //购买
+    public void BuyItem(Item item)
+    {
+        //判断物品的数量 价格不是负数
+        if(item.num <= 0 || item.price < 0)
+        {
+            Console.WriteLine("请输入正确的物品信息");
+            return;
+        }
+        //计算价格
+        if (this.money <item.price*item.num)
+        {
+            Console.WriteLine("当前余额不足:{0}",this.money);
+            return;
+        }
+        //结算
+        this.money -= item.price * item.num;
+        Console.WriteLine("购买{0}{1}个花费{2}钱,当前剩余{3}元",item.name,item.num, item.price * item.num,this.money);
+
+        //如果需要实现物品叠加 可以在前面先判断 是否有这个物品 然后加数量
+        for (int i = 0; i < this.item.Count; i++)
+        {
+            if ((this.item[i] as Item).id == item.id)
+            {
+                //叠加数量
+                (this.item[i] as Item).num += item.num;
+                return;
+            }
+        }
+        //把一组物品添加到list中
+        this.item.Add(item);
+
+    }
+    //卖出
+    public void SellItem(Item item)
+    {
+        for (int i = 0; i < this.item.Count; i++)
+        {
+            //如何判断 买的东西有没有
+            //这是在判断 两个引用地址 指向的是不是同一个房间
+            //所以我们要判断 买的物品 一般不这样判断
+            //if (this.item[i] == item)
+            //{
+
+            //}
+            //通过ID判断
+            if ((this.item[i] as Item).id == item.id)
+            {
+                //分两种情况
+                int num = 0;
+                string name = (this.item[i] as Item).name;
+                int price = (this.item[i] as Item).price;
+                //1.比我身上少
+                if ((this.item[i] as Item).num > item.num)
+                {
+                    num = item.num;
+                    (this.item[i] as Item).num -= num;
+                    Console.WriteLine("{0}剩余{1}个", name, (this.item[i] as Item).num);
+                }
+                else
+                {
+                    //2.购买比我身上多的数量
+                    num = (this.item[i] as Item).num;
+                    //买完了 就从身上移除
+                    this.item.RemoveAt(i);
+                    Console.WriteLine("{0}剩余0个",name);
+                }
+
+                int sellMoney = (int)(num * price * 0.8f);
+                this.money += sellMoney;
+
+                Console.WriteLine("卖了{0}{1}个,赚了{2}元钱",name,num,sellMoney);
+                Console.WriteLine("剩余{0}元",this.money);
+                return;
+
+            }
+
+        }
+
+    } 
+    public void SellItem(int id,int num =1)
+    {
+        //直接调用上面写好的方法
+        //直接构造一个Item类 把ID和数量两个关键信息设置好即可
+        Item item = new Item();
+        item.id = id;
+        item.num = num;
+        SellItem(item);
+    }
+    //显示
+    public void ShowItem()
+    {
+        Item item;
+        for (int i = 0; i < this.item.Count; i++)
+        {
+            item = this.item[i] as Item;
+            Console.WriteLine("有{0}{1}个",item.name,item.num);
+        }
+        Console.WriteLine("当前拥有{0}元钱", this.money);
+    }
+}
+```
+
+```C#
+//背包物品类
+class Item
+{
+    //物品唯一ID 来区分物品的种类
+    public int id;
+    //物品名字
+    public string name;
+    //价格
+    public int price;
+    //数量
+    public int num;
+    public Item()
+    {
+
+    }
+    public Item(int id, string name, int price, int num)
+    {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.num = num;
+    }
+}
+```
+
+
+```C#
+ BagMgr bag = new BagMgr(99999);
+ Item i = new Item(1,"药品",10,10);
+ Item i2 = new Item(2,"大保健",52,1);
+ Item i3 = new Item(3,"大宝剑",999,1);
+
+ bag.BuyItem(i);
+ bag.BuyItem(i2);
+ bag.BuyItem(i3);
+
+ bag.SellItem(i3);
+ bag.SellItem(1,1);
+ bag.SellItem(1,5);
+ bag.SellItem(1,5);
+ bag.SellItem(2,11);
+```
