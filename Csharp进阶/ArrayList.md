@@ -8,5 +8,19 @@ ArrayList是一个C#为我们封装好的类
 比如数组的增删改查
 
 ### 声明
-需要引用命名空间using System.Collections;
+需要引用命名空间`using System.Collections;`
+```C#
 ArrayList array = new ArrayList();
+```
+
+### 增删改查
+
+#### 增
+```
+array.Add(1);
+array.Add("114514");
+array.Add(true);
+array.Add(new object());
+array.Add(new Test());
+array.Add(1);
+```
