@@ -16,11 +16,18 @@ ArrayList array = new ArrayList();
 ### 增删改查
 
 #### 增
-```
+```C#
 array.Add(1);
 array.Add("114514");
 array.Add(true);
 array.Add(new object());
 array.Add(new Test());
 array.Add(1);
+```
+
+范围增加(批量增加 把另一个list容器里面的内容加到后面
+```C#
+```ArrayList array2 = new ArrayList();
+array2.Add(123);
+array.AddRange(array2);
 ```
