@@ -86,17 +86,30 @@ Console.WriteLine(array[0]);
 ### 遍历
 长度:`array.Count`
 容量:`array.Capacity`
-//避免产生过多的垃圾
+避免产生过多的垃圾
 
-
+```C#
 for (int i = 0; i < array.Count; i++)
 {
     Console.WriteLine(array[i]);
 }
 Console.WriteLine("-----迭代器华丽分割线-----");
+
 //迭代器遍历
 foreach (object item in array)
 {
     Console.WriteLine(item);
 }
+```
 
+### 装箱拆箱
+`ArrayList`本质上是一个可以**自动扩容**的`object`数组
+由于用万物之父来进行存储数据 自然存在装箱拆箱
+当往其中进行值类型存储时就是在装箱 当将值类型对象取出来转换使用时 就存在拆箱
+所以==ArrayList尽量少用== 之后会学习更好的数据容器
+
+```C#
+int a = 1;
+array[0] = a;//装箱
+a = (int)array[0];//拆箱
+```
