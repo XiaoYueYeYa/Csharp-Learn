@@ -76,5 +76,27 @@ index = array.LastIndexOf(true);
 Console.WriteLine(index);
 ```
 
+#### 改
+```C#
+Console.WriteLine(array[0]);
+array[0] = "改";
+Console.WriteLine(array[0]);
+```
 
+### 遍历
+长度:`array.Count`
+容量:`array.Capacity`
+//避免产生过多的垃圾
+
+
+for (int i = 0; i < array.Count; i++)
+{
+    Console.WriteLine(array[i]);
+}
+Console.WriteLine("-----迭代器华丽分割线-----");
+//迭代器遍历
+foreach (object item in array)
+{
+    Console.WriteLine(item);
+}
 
