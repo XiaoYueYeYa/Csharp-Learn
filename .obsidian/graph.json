@@ -15,10 +15,24 @@
       }
     },
     {
-      "query": "",
+      "query": "path:C#基础  ",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 7077862
+      }
+    },
+    {
+      "query": "path:C#核心  ",
+      "color": {
+        "a": 1,
+        "rgb": 16706678
+      }
+    },
+    {
+      "query": "path:C#进阶  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
       }
     }
   ],
@@ -32,6 +46,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1,
-  "close": false
+  "scale": 0.9999999999999999,
+  "close": true
 }
