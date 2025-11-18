@@ -45,6 +45,14 @@ settings:
     /* Mint Green */
     --folder-color-6: #6086d6;
     /* Jewel Blue */
+    
+    /* 原本备份 */
+    /* --folder-color-1: #6ab5d6; */
+    /* --folder-color-2: #d6a760; */
+    /* --folder-color-3: #b569d6; */
+    /* --folder-color-4: #d66087; */
+    /* --folder-color-5: #55c4a7; */
+    /* --folder-color-6: #6086d6; */
 }
 
 /* 方案二：北境极光 (Nord Aurora) */
@@ -52,8 +60,8 @@ settings:
     --folder-color-1: #d08770;
     --folder-color-2: #ebcb8b;
     --folder-color-3: #a3be8c;
-    --folder-color-4: #88c0d0;
-    --folder-color-5: #81a1c1;
+    --folder-color-4: #d08770;
+    --folder-color-5: #88c0d0;
     --folder-color-6: #b48ead;
 }
 
