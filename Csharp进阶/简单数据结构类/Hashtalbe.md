@@ -72,3 +72,44 @@ Console.WriteLine(hashtable[1]);
 ```
 
 ### 遍历
+得到键值对 对数(数量)
+```C#
+Console.WriteLine(hashtable.Count);
+```
+1.遍历所有键
+```C#
+foreach (object key in hashtable.Keys)
+{
+    Console.WriteLine("键:" + key);
+    Console.WriteLine("值:"+hashtable[key]);
+}
+```
+
+2.遍历所有值
+```C#
+foreach (object item in hashtable.Values)
+{
+    Console.WriteLine("值:" + item);
+}
+```
+
+3.键值对一起遍历
+```C#
+foreach (DictionaryEntry item in hashtable)
+{
+    Console.WriteLine("键:" + item.Key + "值:" + item.Value);
+}
+```
+
+4.迭代器遍历法
+```C#
+IDictionaryEnumerator myEnumerator = hashtable.GetEnumerator();
+bool flag = myEnumerator.MoveNext();
+while (flag)
+{
+    Console.WriteLine("键:" + myEnumerator.Key + "值:" + myEnumerator.Value);
+    flag = myEnumerator.MoveNext();
+}
+```
+
+### 装箱拆箱
