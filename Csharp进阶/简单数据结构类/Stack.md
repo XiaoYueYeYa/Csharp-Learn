@@ -108,4 +108,56 @@ Console.WriteLine(stack.Count);
 写一个方法计算任意一个数的二进制
 使用栈结构方式存储 之后打印出来
 
+第一部分
+```C#
+static void Main(string[] args)
+{
+    Console.WriteLine("lesson02_Stack_练习");
+    //写一个方法计算任意一个数的二进制
+    //使用栈结构方式存储 之后打印出来
+    Calc(1);
+    Calc(10);
+    Calc(100);
+    
+}
+```
+
+
+static void Calc(uint num)
+{
+    Console.Write("{0}的二进制是:", num);
+    Stack stack = new Stack();
+    if (num == 1)
+    {
+        stack.Push(num);
+    }
+    while (num != 1)
+    {
+        stack.Push(num % 2);
+        num /= 2;
+        if (num == 1)
+        {
+            stack.Push(num);
+            break;
+        }
+    }
+    //循环弹栈
+    while(stack.Count > 0)
+    {
+        Console.Write(stack.Pop());
+    }
+    Console.WriteLine();
+
+    //stack.Push(num % 2);
+    //num /= 2;
+    //stack.Push(num % 2);
+    //num /= 2;
+    //stack.Push(num % 2);
+    //num /= 2;
+    //if (num == 1)
+    //{
+    //    stack.Push(num);
+    //}
+}
+```
 
