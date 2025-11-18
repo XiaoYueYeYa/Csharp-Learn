@@ -113,3 +113,74 @@ while (flag)
 ```
 
 ### 装箱拆箱
+由于用[万物之父](../../Csharp核心/面向对象_继承/万物之父和装箱拆箱.md)来存储数据 自然存在装箱拆箱
+当往里面进行值类型存储时就是在装箱
+当将值类型对象取出来转换使用时 就存在拆箱
+
+## 练习
+制作一个怪物管理器 提供创建怪物 移除怪物的方法
+每个怪物都有自己的唯一ID
+```C#
+class MonsterMgr
+{
+    private static MonsterMgr instance = new MonsterMgr();
+    private Hashtable monstersTable = new Hashtable();
+    private MonsterMgr() 
+    {
+    
+    }
+    public static MonsterMgr Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    private int monsterID = 0;
+    public void AddMonster()
+    {
+        Monster monster = new Monster(monsterID);
+        Console.WriteLine("创建了id为:{0}的怪物",monsterID);
+        ++monsterID;
+        //Hashtable 的键是不能重复的 所以一定是用唯一ID
+        monstersTable.Add(monster.id, monster);
+    }
+
+    public void RemoveMonster(int key)
+    {
+        if (monstersTable.ContainsKey(key))
+        {
+            (monstersTable[key] as Monster).Dead();
+            monstersTable.Remove(key);
+        }
+    }
+}
+```
+
+```C#
+class Monster
+{
+    public int id;
+    public Monster(int id)
+    {
+        this.id = id;
+    }
+    public void Dead()
+    {
+        Console.WriteLine("怪物{0}死亡",id);
+    }
+}
+```
+
+```C#
+MonsterMgr.Instance.AddMonster();
+MonsterMgr.Instance.AddMonster();
+MonsterMgr.Instance.AddMonster();
+MonsterMgr.Instance.AddMonster();
+MonsterMgr.Instance.AddMonster();
+MonsterMgr.Instance.AddMonster();
+
+MonsterMgr.Instance.RemoveMonster(0);
+MonsterMgr.Instance.RemoveMonster(5);
+```
