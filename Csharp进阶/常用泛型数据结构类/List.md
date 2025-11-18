@@ -37,7 +37,6 @@ listStr.Add("456");
 list2.AddRange(listStr);
 list2.AddRange("listStr","123");
 ```
-
 插入
 ```C#
 list.Insert(0,999);
@@ -86,8 +85,11 @@ Console.WriteLine(index);
 ```
 
 #### 改
+简单粗暴
+```C#
 Console.WriteLine(list[0]);
 list[0] = 999;
 Console.WriteLine(list[0]);
+```
 
 
