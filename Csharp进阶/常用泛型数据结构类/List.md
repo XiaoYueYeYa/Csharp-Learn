@@ -142,6 +142,7 @@ foreach (int item in list)
 在怪物类的构造函数中 将其存储到怪物List中
 遍历列表可以让Boss和Gablin对象产生不同攻击
 Monster.monster
+[抽象类和抽象方法](../../Csharp核心/面向对象_多态/抽象类和抽象方法.md)
 ```C#
 abstract class Monster
 {
