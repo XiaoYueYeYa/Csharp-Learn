@@ -44,7 +44,50 @@ list.Insert(0,999);
 Console.WriteLine(list[0]);
 ```
 
+#### 删
+1.移除指定元素
+```C#
+list.Remove(1);
+list.Remove(2);
+```
+2.移除指定位置的元素
+```C#
+list.RemoveAt(2);
+```
+3清空
+```C#
+list.Clear();
+```
 
+#### 查
+1.得到指定位置的元素
+```C#
+Console.WriteLine(list[1]);
+Console.WriteLine(list2[1]);
+```
+2.查看元素是否存在
+```C#
+if (list.Contains(1))
+{
+    Console.WriteLine("存在");
+}
+```
+3.正向查找元素位置
+找到返回位置 找不到 返回-1
+```C#
+int index = list.IndexOf(1);
+Console.WriteLine(index);
+```
+4.反向查找元素位置
+找到返回位置 找不到 返回-1
+```C#
+index = list.LastIndexOf(1);
+Console.WriteLine(index);
+```
 
+#### 改
+Console.WriteLine(list[0]);
+list[0] = 999;
+Console.WriteLine(list[0]);
 
 
