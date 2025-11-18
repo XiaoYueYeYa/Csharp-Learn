@@ -146,7 +146,18 @@ class Test
 }
 ```
 
-
+```C#
+//有一个函数 会返回一个委托函数 这个委托函数中只有一句打印代码
+//之后执行返回的委托函数时 可以打印出1~10
+Test test = new Test();
+Action action = test.Action();
+action();
+Console.WriteLine("-----------------");
+Action action2 = test.Abd();
+action2();
+Console.WriteLine("-------简写-------");
+test.Abd()();
+```
 
 
 
