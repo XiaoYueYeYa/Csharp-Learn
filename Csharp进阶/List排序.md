@@ -1,4 +1,5 @@
 ## List自带排序方法
+[List](常用泛型数据结构类/List.md)
 ```C#
 List<int> list = new List<int>();
 list.Add(1);
