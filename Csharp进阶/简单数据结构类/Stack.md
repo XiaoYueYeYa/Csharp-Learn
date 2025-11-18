@@ -122,7 +122,8 @@ static void Main(string[] args)
 }
 ```
 
-
+第二部分
+```C#
 static void Calc(uint num)
 {
     Console.Write("{0}的二进制是:", num);
@@ -141,6 +142,7 @@ static void Calc(uint num)
             break;
         }
     }
+    
     //循环弹栈
     while(stack.Count > 0)
     {
@@ -160,4 +162,3 @@ static void Calc(uint num)
     //}
 }
 ```
-
