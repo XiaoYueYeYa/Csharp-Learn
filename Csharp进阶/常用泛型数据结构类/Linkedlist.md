@@ -91,3 +91,66 @@ linkedList.First.Value = 10;
 linkedList.Find(3).Value = 10;
 Console.WriteLine(linkedList.First.Value);
 ```
+
+### 遍历
+ 1.foreach
+```C#
+ Console.WriteLine("----华丽分割线-----");
+ foreach (int item in linkedList)
+ {
+     Console.WriteLine(item);
+ }
+```
+ 2.通过节点遍历
+ 从头到尾
+ ```C#
+ Console.WriteLine("----华丽分割线-----");
+ LinkedListNode<int> nowNode = linkedList.First;
+ while (nowNode != null)
+ {
+     Console.WriteLine(nowNode.Value);
+     nowNode = nowNode.Next;
+ }
+ ```
+ 3.通过节点遍历
+ 从尾到头
+ ```C#
+ Console.WriteLine("----华丽分割线-----");
+ nowNode = linkedList.Last;
+ while (nowNode != null)
+ {
+     Console.WriteLine(nowNode.Value);
+     nowNode = nowNode.Previous;
+ }
+ ```
+
+---
+
+
+## 练习
+使用LinkedList 向其中加入10个随机整形变量
+正向遍历一次打印信息
+反向遍历打印一次信息
+
+```C#
+LinkedList<int> link = new LinkedList<int>();
+Random random = new Random();
+for (int i = 0; i < 10; i++)
+{
+    link.AddLast(random.Next());
+}
+Console.WriteLine("-----正向-----");
+//正向
+foreach (int item in link)
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine("-----反向-----");
+//反向
+LinkedListNode<int> nowNode = link.Last;
+while (nowNode != null)
+{
+    Console.WriteLine(nowNode.Value);
+    nowNode = nowNode.Previous;
+}
+```
