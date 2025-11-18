@@ -92,4 +92,99 @@ list[0] = 999;
 Console.WriteLine(list[0]);
 ```
 
+### 遍历 
+获取长度
+```C#
+Console.WriteLine(list.Count);
+```
+获取容量
+```C#
+Console.WriteLine(list.Capacity);
+```
 
+```C#
+for (int i = 0; i < list.Count; i++)
+{
+    Console.WriteLine(list[i]);
+}
+
+foreach (int item in list)
+{
+    Console.WriteLine(item);
+}
+```
+
+## 练习
+### 第一题
+
+建立一个整形`List `为他添加10~1
+删除`List`中的第五个元素
+遍历剩余元素并打印
+```C#
+List<int> list = new List<int>();
+for (int i = 10; i > 0; i--)
+{
+    list.Add(i);
+}
+
+list.RemoveAt(4);
+
+foreach (int item in list)
+{
+    Console.Write(item);
+}
+```
+
+
+### 第二题
+
+一个Monster基类 Boss和Gablin都继承它
+在怪物类的构造函数中 将其存储到怪物List中
+遍历列表可以让Boss和Gablin对象产生不同攻击
+Monster.monster
+```C#
+abstract class Monster
+{
+    //在怪物类的构造函数中 将(新的自己Monster)其存储到(怪物)List中
+    //静态函数存在唯一性 只会new一次
+    public static List<Monster> monsters = new List<Monster>();
+    public Monster()
+    {
+        monsters.Add(this);
+    }
+
+    //遍历列表可以让Boss和Gablin对象产生不同攻击
+    abstract public void Atk();
+}
+class Boss : Monster
+{
+    public override void Atk()
+    {
+        Console.WriteLine("Boss的攻击");
+    }
+}
+class Gablin : Monster
+{
+    public override void Atk()
+    {
+        Console.WriteLine("哥布林的攻击");
+    }
+}
+```
+
+```C#
+Boss b1 = new Boss();
+Boss b2 = new Boss();
+Gablin g1 = new Gablin();
+Gablin g2 = new Gablin();
+
+for (int i = 0; i < Monster.monsters.Count; i++)
+{
+    Monster.monsters[i].Atk();
+}
+Console.WriteLine("-----华丽分割线-----");
+foreach (Monster item in Monster.monsters)
+{
+    item.Atk();
+}
+```
